@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marvel-Themed Dark Form</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* General reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #1e1e1e, #0b0b0b);
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            background: #2e2e2e;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 20px rgba(255, 0, 0, 0.5);
+            width: 400px;
+            animation: fadeIn 2s ease-in-out;
+        }
+        .container h1 {
+            text-align: center;
+            font-size: 24px;
+            color: #e50914;
+            margin-bottom: 20px;
+            animation: titleGlow 3s infinite alternate;
+        }
+        form label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 10px;
+            color: #f1f1f1;
+        }
+        .radio-group, .upload-group {
+            margin-bottom: 20px;
+        }
+        .radio-group label {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+            cursor: pointer;
+            color: #00f7ff;
+            transition: color 0.3s ease;
+        }
+        .radio-group label:hover {
+            color: #00aaff;
+        }
+        .radio-group input[type="radio"] {
+            margin-right: 10px;
+            accent-color: #e50914;
+        }
+        .upload-group input[type="file"] {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            border-radius: 4px;
+            background: #333;
+            color: #fff;
+            border: none;
+            transition: background 0.3s;
+        }
+        .upload-group input[type="file"]:hover {
+            background: #444;
+        }
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, #e50914, #ff3b3b);
+            color: #fff;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.3s;
+        }
+        .submit-btn:hover {
+            background: linear-gradient(135deg, #ff3b3b, #e50914);
+            box-shadow: 0px 0px 10px rgba(255, 0, 0, 0.7);
+            transform: scale(1.05);
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes titleGlow {
+            from {
+                text-shadow: 0px 0px 5px #e50914, 0px 0px 10px #e50914;
+            }
+            to {
+                text-shadow: 0px 0px 15px #e50914, 0px 0px 20px #ff3b3b;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Select Option & Upload Image</h1>
+        <form action="/upload" method="post" enctype="multipart/form-data">
+            <!-- Radio button group -->
+            <div class="radio-group">
+                <label>Select Accuracy Level:</label>
+                <label><input type="radio" name="accuracy" value="0.8" required> 80%</label>
+                <label><input type="radio" name="accuracy" value="0.9"> 90%</label>
+                <label><input type="radio" name="accuracy" value="0.95"> 95%</label>
+                <label><input type="radio" name="accuracy" value="0.99"> 99%</label>
+            </div>
+            <!-- File upload group -->
+            <div class="upload-group">
+                <label for="image">Upload Image:</label>
+                <input type="file" name="image" id="image" accept="image/*" required>
+            </div>
+            <!-- Submit button -->
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
