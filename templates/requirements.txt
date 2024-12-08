@@ -1,7 +1,0 @@
-Flask
-Flask-Cors
-numpy
-scikit-learn
-scikit-image
-gunicorn
-streamlit
